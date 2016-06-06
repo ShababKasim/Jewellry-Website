@@ -1,0 +1,35 @@
+<?php
+	$host='127.0.0.1';
+	$user='root';
+	$password='root';
+	$database="Jewellry";
+
+	$con = mysql_connect($host,$user,$password); 
+	$connect=mysql_select_db($database, $con);
+	
+	if($connect)
+	{
+		echo 'Connection successfully'."<br>";
+		echo 'Connected to ' . $database . "</br>" ;
+	}
+	else
+	{
+		echo 'Sorry Connection error';	
+	}
+	
+	$email = $_POST['email'];
+	$name = $_POST['name'];	
+	$password = $_POST['password'];
+	$age = $_POST['age'];
+	$mobile = $_POST['mobile'];
+	$address = $_POST['address'];
+	
+$sql = "INSERT INTO register(name,password,email,mobile,address,age) VALUES ('$name','$password','$email','$mobile','$address','$age')";    //Inserting Values in the Table
+$result = mysql_query($sql,$con);
+
+if(!$result)
+	echo 'You are not yet registered Please Try Again' . "</br>";
+else
+	echo 'You are Registered Successfully' . "</br>";
+	header('location:sreg.php');
+?>

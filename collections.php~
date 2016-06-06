@@ -1,0 +1,183 @@
+<?php 
+	session_start();
+           ?>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Collections: Jewellerystore</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<meta name="keywords" content="Fleck iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+		<!---Start-Header-->
+		<div class="header">
+			<!---Start-wrap-->
+		<div class="wrap">
+			<!---Start-Logo-->
+				<div class="logo">
+					<a href="index.php"><img src="images/logo2.png" title="logo" /></a>
+				</div>
+				<!---End-Logo-->
+				<!---Start-top-nav-->
+				<div class="top-nav">
+					<ul>
+					<li><a href="index.php">Home</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="collections.php">Collections</a></li>
+						<li><a href="cont.php">Contact</a></li>						
+						<li><?php if($_SESSION['username']!=NULL) echo"<a href='form.php'>My Favorites</a>"; ?></li>						
+						<li><?php if(($_SESSION['username']==NULL)&&($_SESSION['admin']==NULL)) echo "<a href='regi.php'>Register</a>"; ?></li>						
+						<li><?php if(($_SESSION['username']!=NULL)||($_SESSION['admin']!=NULL)) {echo "<a href='logout.php'>Logout</a>"; echo "<a>Welcome, </a>" ."<a>".$_SESSION['username']."</a>";} else echo "<a href='log_in.php'>Log In</a>"; ?></li>						
+						
+						
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<!---End-top-nav-->
+			</div>
+			<!---End-Header-->
+			</div>
+				<div class="clear"> </div>
+				<div class="wrap">
+				<div class="collecton">
+					<h4>Rings</h4>
+					<div class="collections collect">
+							<a href="RRPL.php" ><img src="images/ring1.jpg" title="rigns" />
+						<h5>Platinum Collection</h5></a>
+						<p>Variety of platinum rings to be selected from.</p>
+					</div>
+					<div class="collections collect">
+						<a href="RRBR.php" >	<img src="images/ring2.jpg" title="rigns" />
+						<h5>Bride's Rings</h5></a>
+						<p>A huge collection to get the perfect match for your bride's outfit.</p>
+					</div>
+					<div class="collections collect">
+							<a href="RRHR.php" ><img src="images/ring3.jpg" title="rigns" />
+						<h5>Heart Rings</h5></a>
+						<p>Show your love with the symbol of love. Heart Collection exclusively for sharing the love</p>
+					</div>
+					<div class="collections collect">
+							<a href="RRCR.php" ><img src="images/ring4.jpg" title="rigns" />
+						<h5>Gold Rings</h5></a>
+						<p>Pure Gold Rings studded with diamond.</p>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="collecton">
+					<h4>Necklace</h4>
+					<div class="collections collect">
+							<a href="NNBN.php" ><img src="images/nak1.jpg" title="rigns" />
+						<h5>Beads Necklace</h5></a>
+						<p>Neck Pack Necklace to suit every ocassion.</p>
+					</div>
+					<div class="collections collect">
+							<a href="NNDM.php" ><img src="images/nak4.jpg" title="rigns" />
+						<h5>Diamond Necklace</h5></a>
+						<p>Diamond studded necklaces, simple yet elegant.</p>
+					</div>
+					<div class="collections collect">
+							<a href="NNDN.php" ><img src="images/nak3.jpg" title="rigns" />
+						<h5>Designer Necklaces</h5>
+						<p>Specially Designed </p></a>
+					</div>
+					<div class="collections collect">
+							<a href="NNWH.php" ><img src="images/nec.jpg" title="rigns" width="300" height="180" />
+						<h5>White Gold & Diamond Necklaces</h5>
+						<p>The Beauty Of with Gold with the charm of diamond to it.</p></a>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="collecton">
+					<h4>Diamond Ear-rings</h4>
+					<div class="collections collect">
+							<img src="images/dom1.jpg" title="rigns" />
+						<h5>Bridal Collection</h5>
+						<p>Exclusive Bridal Collection Ear-Rings</p>
+					</div>
+					<div class="collections collect">
+							<img src="images/dom2.jpg" title="rigns" />
+						<h5>Single Diamond Ear Tops</h5>
+						<p>Single Diamond Ear Tops to match any outfit</p>
+					</div>
+					<div class="collections collect">
+							<img src="images/dom3.jpg" title="rigns" />
+						<h5>Gold Ear Rings</h5>
+						<p>Purely Gold Ear-Rings </p>
+					</div>
+					<div class="collections collect">
+							<img src="images/der.png" title="rigns" />
+						<h5>Platinum Ear-Rings</h5>
+						<p>The beauty Of Platinum with Diamonds.</p>
+					</div>
+					<div class="clear"> </div>
+				</div>		
+				 </div>
+				
+				<!---start-footer-->
+				<div class="clear"> </div>
+			<div class="footer">
+				<div class="wrap">
+				<div class="footer-grid1">
+					<h4>Most-popular</h4>
+					<ul>
+						<li><a href="#">Engagement</a></li>
+						<li><a href="#">Couple Bands</a></li>
+						<li><a href="#">Heart Rings</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Recent-One</h4>
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Neck lace</a></li>
+						<li><a href="#">Dimond Jewellry</a></li>
+						<li><a href="#">Ear Rings</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Special</h4>
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Neck lace</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Deals</h4>
+					<ul>
+						<li><a href="#">Register today to avil Discount</a></li>
+						<li><a href="#">10% Discount on Rings</a></li>
+						<li><a href="#">20% Discount on VISA card</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Latest-News</h4>
+					<ul>
+						<li><a href="#">New well Furnished Dimond Rings</a></li>
+						<li><a href="#">Platinium and Dimond twist Necklace</a></li>
+						<li><a href="#">Gold dipped ear rings</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+			<div class="clear">
+				<!---start-sub-footer-->
+			<div class="sub-footer">
+				<div class="wrap">
+				<div class="sub-footer-left">
+					<a href="index.php"><img src="images/logo2.png" title="logo" /></a>
+				</div>
+				<div class="sub-footer-right">
+					<p>&#169 All rights Reserved | Designed by <a href="http://w3layouts.com/">W3Layouts</a></p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		</div>
+		<!---End-wrap-->
+
+	</body>
+</html>
+

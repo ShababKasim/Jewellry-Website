@@ -1,0 +1,38 @@
+<?php
+	$host='127.0.0.1';
+	$user='root';
+	$password='root';
+	$database="Jewellry";
+
+	$con = mysql_connect($host,$user,$password); 
+	$connect=mysql_select_db($database, $con);
+	
+	if($connect)
+	{
+		echo 'Connection successfully'."<br>";
+		echo 'Connected to ' . $database . "</br>" ;
+	}
+	else
+	{
+		echo 'Sorry Connection error';	
+	}
+		
+	$email = $_POST['email'];
+	$name = $_POST['name'];	
+	$subject = $_POST['subject'];
+	
+	/*echo 'Name is ' . $name;
+	echo 'email is ' . $email;
+	echo 'message is is ' . $subject;
+	*/
+	$sql = "INSERT INTO contact(name,email,subject) VALUES ('$name','$email','$subject')";    //Inserting Values in the Table
+	$result = mysql_query($sql,$con);
+
+	if(!$result)
+		echo 'Your are Message has not been dilevered' . "</br>";
+	else
+		echo 'Your Message has been dilevered Successfully' . "</br>";
+
+	
+
+?>

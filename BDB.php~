@@ -1,0 +1,151 @@
+<?php 
+	session_start();
+           ?>
+<html>
+	<head>
+		<title>Rings:: Jewellerystore</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<meta name="keywords" content="Fleck iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+		<!---Start-Header-->
+		<div class="header">
+			<!---Start-wrap-->
+		<div class="wrap">
+			<!---Start-Logo-->
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" title="logo" /></a>
+				</div>
+				<!---End-Logo-->
+				<!---Start-top-nav-->
+				<div class="top-nav">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="collections.php">Collections</a></li>
+						<li><a href="cont.php">Contact</a></li>						
+						<li><?php if($_SESSION['username']!=NULL) echo"<a href='form.php'>My Favorites</a>"; ?></li>						
+						<li><?php if(($_SESSION['username']==NULL)&&($_SESSION['admin']==NULL)) echo "<a href='regi.php'>Register</a>"; ?></li>						
+						<li><?php if(($_SESSION['username']!=NULL)||($_SESSION['admin']!=NULL)) {echo "<a href='logout.php'>Logout</a>"; echo "<a>Welcome, </a>" ."<a>".$_SESSION['username']."</a>";} else echo "<a href='log_in.php'>Log In</a>"; ?></li>
+
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<!---End-top-nav-->
+			</div>
+			<!---End-Header-->
+			</div>
+			<div class="wrap"> 
+			<div class="about">
+				<div class="grid box">
+						<a href="engagement.php" ><img src="images/brc3.jpg" title="img1" />
+						<h3>DIAMOND BRACELET</h3></a>
+						<p>ACHA HAI KHAREED LO</p>
+					</div>
+
+				<div class="about-right">
+					<h4>Order</h4>
+					<?php
+					include("dbconnect.php");
+					include("table.html");
+					$sql = "select pid,pname,price from products WHERE pid='BDB'";					
+					$result = mysql_query($sql);
+					$num_rows = mysql_num_rows($result);
+					$rows = mysql_fetch_assoc($result);
+					if($num_rows > 0)
+					{
+					echo "<h4>Product Id : " . $rows["price"] . "<br>";	
+					echo "<h4>Name :  " . $rows["pname"] . "<br>";	
+					echo "<h4>Price : $" . $rows["price"];					
+					}
+					
+					?>
+					
+					<p>Once the order is place, It would be dilevered according to buisness days.</p>
+					<p>Visit our Link for Support and Return policy</p>
+					<div class="contact-form">					
+					<form method="post">
+					<div>
+					<input type="submit" value="Buy Now">
+					<input type="submit" value="Add to Cart"></div>					
+					</form>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+				<div class="clear"> </div>
+				
+			</div>
+			
+			</div>
+			<div class="clear"> </div>
+			
+				<!---start-footer-->
+				<div class="clear"> </div>
+			<div class="footer">
+				<div class="wrap">
+				<div class="footer-grid1">
+					<h4>Most-popular</h4>
+					<ul>
+						<li><a href="#">Engagement</a></li>
+						<li><a href="#">Couple Bands</a></li>
+						<li><a href="#">Heart Rings</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Recent-One</h4>
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Neck lace</a></li>
+						<li><a href="#">Dimond Jewellry</a></li>
+						<li><a href="#">Ear Rings</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Special</h4>
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Neck lace</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Deals</h4>
+					<ul>
+						<li><a href="#">Register today to avil Discount</a></li>
+						<li><a href="#">10% Discount on Rings</a></li>
+						<li><a href="#">20% Discount on VISA card</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Latest-News</h4>
+					<ul>
+						<li><a href="#">New well Furnished Dimond Rings</a></li>
+						<li><a href="#">Platinium and Dimond twist Necklace</a></li>
+						<li><a href="#">Gold dipped ear rings</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+			<div class="clear">
+				<!---start-sub-footer-->
+			<div class="sub-footer">
+				<div class="wrap">
+				<div class="sub-footer-left">
+					<a href="index.html"><img src="images/logo1.png" title="logo" /></a>
+				</div>
+				<div class="sub-footer-right">
+					<p>&#169 All rights Reserved | Designed by <a href="http://w3layouts.com/">W3Layouts</a></p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		</div>
+		<!---End-wrap-->
+
+	</body>
+</html>
+

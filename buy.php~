@@ -1,0 +1,43 @@
+<?php
+	session_start();
+	$host='localhost';
+	$user='root';
+	$password='root';
+	$database="Jewellry";
+
+	$con = mysql_connect($host,$user,$password); 
+	$connect=mysql_select_db($database, $con);
+	
+	if($connect)
+	{
+		echo 'Connection successfully'."<br>";
+		echo 'Connected to ' . $database . "</br>" ;
+	}
+	else
+	{
+		echo 'Sorry Connection error';	
+	}
+	
+	$uid = $_SESSION['uid'];
+	$quantity = $_POST['quantity'];
+	$price1 = $_SESSION['price'];
+	$price = $price1 * $quantity;
+	$pid = $_SESSION['pid'];
+/*
+   echo "ID is :" . $uid;
+   echo "Price is : " .$price;	
+	echo "pro id is : " .$pid;
+	echo "Quantity is : " . $quantity;
+	
+*/
+$sql = mysql_query("INSERT INTO buy (id,pid,quantity,price) VALUES ($uid,'$pid',$quantity,$price)");    //Inserting Values in the Table
+
+
+if($sql)
+	echo 'You are Registered Successfully' . "</br>";
+
+else
+	echo 'You are not yet registered Please Try Again' . "</br>";
+
+
+?>

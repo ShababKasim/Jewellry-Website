@@ -1,0 +1,214 @@
+
+<?php 
+	session_start();
+?>
+
+<html>
+	<head>
+		<title>Index: Jewellerystore</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<meta name="keywords" content="Fleck iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/slider.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+		    <script type="text/javascript">
+		    $(window).load(function() {
+		        $('#slider').nivoSlider();
+		    });
+		    </script>
+	</head>
+	<body>
+		
+		<!---Start-Header-->
+		<div class="header">
+			<!---Start-wrap-->
+		<div class="wrap">
+			<!---Start-Logo-->
+				<div class="logo">
+					<a href="index.php"><img src="images/logo2.png" title="logo" /></a>
+				</div>
+				<!---End-Logo-->
+				<!---Start-top-nav-->
+				<div class="top-nav">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="collections.php">Collections</a></li>
+						<li><a href="cont.php">Contact</a></li>						
+						<li><?php if($_SESSION['username']=="admin") echo"<a href='form.php'>Show Products</a>"; ?></li>						
+						<li><?php if(($_SESSION['username']==NULL)&&($_SESSION['admin']==NULL)) echo "<a href='regi.php'>Register</a>"; ?></li>						
+						<li><?php if(($_SESSION['username']!=NULL)||($_SESSION['admin']!=NULL)) {echo "<a href='logout.php'>Logout</a>"; echo "<a>Welcome, </a>" ."<a>".$_SESSION['username']."</a>";} else echo "<a href='log_in.php'>Log In</a>"; ?></li>						
+											<li><?php //if(($_SESSION['username']!=NULL)||($_SESSION['admin']!=NULL)) 
+								//{ echo "<div class="top-nav"><a href='logout.php'>Logout</a></div>"."Welcome, ". $_SESSION['username'];
+								//}
+							//	 else{ echo "<div class="top-nav"><a href='log_in.php'>Log In</a></div>";} ?></li>
+						
+					
+						
+						
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<!---End-top-nav-->
+			</div>
+			<!---End-Header-->
+			</div>
+			<!---start-Imgslider-->
+			<div class="img-slider">
+				<div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+					 <img src="images/3.jpg"  alt=""  />                 
+                <img src="images/2.jpg"  alt=""  /> 
+                <img src="images/hom1.jpg"  alt=""  />
+                <img src="images/hom2.jpg"  alt=""  />
+				<img src="images/hom3.jpg"  alt=""  /> 
+                <img src="images/hom4.jpg"  alt=""  />
+                <img src="images/hom5.jpg"  alt=""  />
+				<img src="images/hom6.jpg"  alt=""  />
+                <!--<img src="images/3.jpg"  alt="" title="#htmlcaption" />!-->
+            </div>
+        	</div>
+			</div>
+			<div class="content">
+				
+				<div class="content-heading">
+					<div class="wrap">
+					<div class="sicial-contentheading">
+						<ul>
+							<li><a href="#"><img src="images/twiter.png" title="twitter" /></a></li>
+							<li><a href="#"><img src="images/facebook.png" title="Facebook" /></a></li>
+							<li><a href="#"><img src="images/video.png" title="video" /></a></li>
+						</ul>
+					</div>
+					<div class="content-heading-info">
+						<h4>Welcome	To Jewellery store</h4>
+						<p>Royalty knows no hues, no titles; for it is defined by </p>
+						<p>the eminence within onself. Citing the imperial</p>
+						<p>compassions of all women, enthic gold Jewellry is</p>
+						<p>the most adored comeback of all times.</p>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				</div>	
+				<div class="clear"> </div>
+				<div class="wrap">
+				<div class="grids">
+					<div class="grid box">
+						<a href="engagement.php" ><img src="images/gird-img.jpg" title="img1" />
+						<h3>ENGAGEMENT</h3></a>
+						<p>An awesome collection of precisely designed Engagement rings for the perfect Bridal Touch. Get One for your would be Mr/Mrs today.</p>
+					</div>
+					<div class="grid box">
+						<a href="brecelate.php" ><img src="images/gird-img2.jpg" title="img1" />
+						<h3>Bracelete</h3></a>
+						<p>Get your loved ones the finest piece of creativity as Braceletes to enhance their beauty.</p>
+					</div>
+					<div class="grid box">
+						<a href="heart.php" ><img src="images/hr10.jpg" title="img1" />
+						<h3>Heart Rings</h3></a>
+						<p>Show Off your affection for your partner with these elegant Heart Rings. A sweet present one can't resist. </p>
+					</div>
+				</div>
+				<div class="clear"> </div>
+				<div class="Latest-Collection">
+					<h4>Latest-Collection</h4>
+					<ul>
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>	
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>	
+						<li><a href="#"><img src="images/01.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/02.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+						<li><a href="#"><img src="images/03.jpg" title="img1" /></a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<div class="clear"> </div>
+			
+				<!---start-footer-->
+				<div class="clear"> </div>
+			<div class="footer">
+				<div class="wrap">
+				<div class="footer-grid1">
+					<h4>Most-popular</h4>
+					<ul>
+						<li><a href="#">Engagement</a></li>
+						<li><a href="#">Couple Bands</a></li>
+						<li><a href="#">Heart Rings</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Recent-One</h4>
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Neck lace</a></li>
+						<li><a href="#">Dimond Jewellry</a></li>
+						<li><a href="#">Ear Rings</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Special</h4>
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Neck lace</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Deals</h4>
+					<ul>
+						<li><a href="#">Register today to avil Discount</a></li>
+						<li><a href="#">10% Discount on Rings</a></li>
+						<li><a href="#">20% Discount on VISA card</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Latest-News</h4>
+					<ul>
+						<li><a href="#">New well Furnished Dimond Rings</a></li>
+						<li><a href="#">Platinium and Dimond twist Necklace</a></li>
+						<li><a href="#">Gold dipped ear rings</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+			<div class="clear">
+				<!---start-sub-footer-->
+			<div class="sub-footer">
+				<div class="wrap">
+				<div class="sub-footer-left">
+					<a href="index.php"><img src="images/logo2.png" title="logo" /></a>
+				</div>
+				<div class="sub-footer-right">
+					<p>&#169 All rights Reserved | Designed by <a href="http://w3layouts.com/">W3Layouts</a></p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		</div>
+		<!---End-wrap-->
+
+	</body>
+</html>
+

@@ -1,0 +1,55 @@
+<?php
+session_start();
+$host='127.0.0.1';
+	$user='root';
+	$password='root';
+	$database="Jewellry";
+
+	$con = mysql_connect($host,$user,$password); 
+	$connect=mysql_select_db($database, $con);
+	
+	if($connect)
+	{
+		echo 'Connection successfully'."<br>";
+		echo 'Connected to ' . $database . "</br>" ;
+	}
+	else
+	{
+		echo 'Sorry Connection error';	
+	}
+ 
+  $uname = $_POST['name'];
+  $pwd = $_POST['password'];
+  
+  $uname = htmlspecialchars($uname);
+  $pwd = htmlspecialchars($pwd);
+  
+  $sql = "SELECT * from register WHERE name = '$uname' AND password = '$pwd' ";
+  
+  $result = mysql_query($sql,$con);
+  $rows = mysql_fetch_assoc($result);
+  if($result)
+  {
+  		$num_rows = mysql_num_rows($result);
+  		if($num_rows > 0)
+		{  	
+			$_SESSION['username']=$uname;
+			$_SESSION['Uid']=$rows['id'];
+  			//$errorMessage = 'Logged on';
+  			echo "Welcome ".$uname;
+  			header('location:index.php');
+  		}
+  	
+  		else
+  		{ 
+  			$errorMessage = "Invalid Login";
+  			echo 'Invalid login'."</br>";
+  			echo 'Invalid username or password' . "</br>";
+  			header("Location:invlogin.php");
+  		
+  		}
+  		}
+  else{
+  	echo "nothing";}
+
+?>
